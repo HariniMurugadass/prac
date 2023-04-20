@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer-design
+        {
+            background-color: rgb(179, 212, 241);
+            height: 600px;
+            width: 600px;
+            margin: auto;
+            text-align: center;
+            border: 3px solid black;
+            padding: auto;
+        }
+        .box
+        {
+            background-color: blanchedalmond;
+            width: 500px;
+            height: 50px;
+            border: 1px solid black;
+            padding: auto;
+            margin: auto;
+            margin-top: 50px;
+            font-size:30px;
+        }
+        .num-btn
+        {
+            background-color: coral;
+            height: 80px;
+            width: 80px;
+            border: 1px solid black;
+            padding: auto;
+            margin: 20px;
+            font-size: 30px;
+        }
+
+    </style>
+    <script>
+        function insert(num)
+        {
+            form1.box.value=form1.box.value+num;
+        }
+        function backspace()
+        {
+            var exp=document.form1.box.value;
+            
+            document.form1.box.value=exp.substring(0,exp.length-1)
+        }
+        function equal()
+        {
+            var expr=document.form1.box.value
+            
+            document.form1.box.value = eval(expr)
+            
+        }
+    </script>
+</head>
+<body>
+  <div class="outer-design">
+    <form name="form1">
+        <input type="text" name="box" class="box">
+    </form>
+    <center>
+    <table>
+        <tr>
+            <td><input type="button" value="C" class="num-btn" onclick="form1.box.value='' "></td>
+            <td><input type="button" value="B" class="num-btn" onclick="backspace()"></td>
+            <td><input type="button" value="/" class="num-btn" onclick="insert('/')"></td>
+            <td><input type="button" value="X" class="num-btn" onclick="insert('*')"></td>
+            
+        </tr>
+        <tr>
+            <td><input type="button" value="7" class="num-btn" onclick="insert(7)"></td>
+            <td><input type="button" value="8" class="num-btn" onclick="insert(8)"></td>
+            <td><input type="button" value="9" class="num-btn" onclick="insert(9)"></td>
+            <td><input type="button" value="-" class="num-btn" onclick="insert('-')"></td>
+            
+        </tr>
+        <tr>
+            <td><input type="button" value="4" class="num-btn" onclick="insert(4)"></td>
+            <td><input type="button" value="5" class="num-btn" onclick="insert(5)"></td>
+            <td><input type="button" value="6" class="num-btn" onclick="insert(6)"></td>
+            <td><input type="button" value="+" class="num-btn" onclick="insert('+')"></td>
+            
+        </tr>
+        <tr>
+            <td><input type="button" value="1" class="num-btn" onclick="insert(1)"></td>
+            <td><input type="button" value="2" class="num-btn" onclick="insert(2)"></td>
+            <td><input type="button" value="3" class="num-btn" onclick="insert(3)"></td>
+            <td><input type="button" value="=" class="num-btn" onclick="equal()"></td>
+            
+        </tr>
+    </table>
+</center>
+  </div>
+   
+</body>
+</html>
